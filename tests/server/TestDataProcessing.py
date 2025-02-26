@@ -2,7 +2,7 @@ import pytest
 import os
 from unittest.mock import Mock, patch
 
-from src.server.DataPipeline import DataPipeline
+from src.server.DataProcessing import DataProcessing
 
 @pytest.fixture
 def mock_data_source():
@@ -32,17 +32,17 @@ def data_pipeline(tmp_path):
     (datasets_dir / "dataset3.pdf").touch()
     (datasets_dir / "dataset4.pptx").touch()
     
-    return DataPipeline()
+    return DataProcessing()
 
 # Unit Tests
-class TestDataPipelineUnit:
+class TestDataProcessing:
     def test_init(self, tmp_path):
-        pipeline = DataPipeline()
+        pipeline = DataProcessing()
         assert len(pipeline.data_sources) == 4
         assert pipeline.processed_data == {}
         assert pipeline.ingestors == []
 
-    @patch('src.server.DataPipeline.IngestionFactory')
+    @patch('src.server.DataProcessing.IngestionFactory')
     def test_ingest_data(self, mock_factory, data_pipeline, mock_ingestor):
         mock_factory.create_ingestion.return_value = mock_ingestor
         data_pipeline.ingest_data()
@@ -59,7 +59,7 @@ class TestDataPipelineUnit:
         assert data_pipeline.processed_data["json"] == {"test": "data"}
         assert mock_ingestor.create_processor.called
 
-    @patch('src.server.DataPipeline.APIHandler')
+    @patch('src.server.DataProcessing.APIHandler')
     def test_handle_api(self, mock_api_handler_class, data_pipeline):
         mock_handler_instance = mock_api_handler_class.return_value
         data_pipeline.processed_data = {
@@ -80,9 +80,9 @@ class TestDataPipelineUnit:
         assert mock_handler_instance.run.called
 
 # Integration Tests
-class TestDataPipelineIntegration:
-    @patch('src.server.DataPipeline.IngestionFactory')
-    @patch('src.server.DataPipeline.APIHandler')
+class TestDataProcessingIntegration:
+    @patch('src.server.DataProcessing.IngestionFactory')
+    @patch('src.server.DataProcessing.APIHandler')
     def test_run_pipeline(self, mock_api_handler_class, mock_factory, data_pipeline):
         mock_ingestor = Mock()
         mock_processor = Mock()

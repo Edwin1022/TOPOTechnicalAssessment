@@ -4,7 +4,7 @@ from pathlib import Path
 root_dir = Path(__file__).resolve().parents[2]
 sys.path.append(str(root_dir))
 
-from src.server.DataPipeline import DataPipeline
+from src.server.DataProcessing import DataProcessing
 from src.server.Visualization.VisualizationFactory import VisualizationFactory
 import streamlit as st
 import matplotlib.pyplot as plt
@@ -21,7 +21,7 @@ class DataVisualizationDashboard:
 
     @st.cache_resource
     def initialize_pipeline(_self):
-        pipeline = DataPipeline()
+        pipeline = DataProcessing()
         pipeline.ingest_data()
         pipeline.process_data()
         return pipeline

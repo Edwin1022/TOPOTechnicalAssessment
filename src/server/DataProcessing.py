@@ -9,7 +9,7 @@ from src.server.DataIngestion.IngestionFactory import IngestionFactory
 from src.server.APIHandler import APIHandler
 import os
 
-class DataPipeline:
+class DataProcessing:
     def __init__(self):
         datasets_dir = os.path.join(os.path.dirname(__file__), '../..', 'datasets')
         
@@ -53,5 +53,5 @@ class DataPipeline:
         self.handle_api()
 
 if __name__ == '__main__':
-    pipeline = DataPipeline()
+    pipeline = DataProcessing()
     pipeline.run_pipeline()
