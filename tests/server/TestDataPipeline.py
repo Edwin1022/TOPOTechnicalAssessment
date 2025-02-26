@@ -27,7 +27,6 @@ def data_pipeline(tmp_path):
     datasets_dir = tmp_path / "datasets"
     datasets_dir.mkdir()
     
-    # Create empty test files
     (datasets_dir / "dataset1.json").touch()
     (datasets_dir / "dataset2.csv").touch()
     (datasets_dir / "dataset3.pdf").touch()

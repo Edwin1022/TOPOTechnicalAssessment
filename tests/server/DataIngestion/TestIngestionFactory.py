@@ -6,7 +6,6 @@ from src.server.DataIngestion.CSVDataIngestion import CSVDataIngestion
 from src.server.DataIngestion.PPTXDataIngestion import PPTXDataIngestion
 from src.server.DataIngestion.PDFDataIngestion import PDFDataIngestion
 
-# Fixtures
 @pytest.fixture
 def mock_json_data():
     return '{"key": "value"}'

@@ -1,4 +1,3 @@
-# tests/server/test_visualization_factory.py
 import pytest
 from unittest.mock import Mock, patch
 import pandas as pd
