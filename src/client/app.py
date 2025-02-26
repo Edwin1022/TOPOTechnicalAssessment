@@ -42,10 +42,53 @@ class DataVisualizationDashboard:
 
         st.header("JSON Data Visualizations")
 
-        plt.figure(figsize=(10, 6))
-        fig1, fig2 = visualization.plot()
+        company_list = visualization.companies_df['Company_Name'].unique().tolist()
+        company_list.insert(0, "All Companies")
 
+        st.subheader("Salary Distribution by Company")
+
+        selected_company = st.selectbox(
+            "Filter salary distribution by company:",
+            company_list
+        )
+
+        company_filter = None if selected_company == "All Companies" else selected_company
+
+        fig1 = visualization.plot_salary_distribution_by_company(
+            visualization.companies_df,
+            visualization.employees_df,
+            company_filter
+        )
         st.pyplot(fig1)
+
+        st.markdown("---")
+        
+        st.subheader("Top Roles by Average Salary")
+
+        col1, spacing, col2 = st.columns([10, 1, 10])
+        
+        with col1:
+            top_n = st.slider(
+                "Number of roles to display:",
+                min_value=5,
+                max_value=30,
+                value=10,
+                step=5
+            )
+        
+        with col2:
+            selected_sort = st.radio(
+                "Sort order for average salary:",
+                ["Descending", "Ascending"]
+            )
+        
+        sort_order = True if selected_sort == "Ascending" else False
+
+        fig2 = visualization.plot_roles_by_average_salary(
+            visualization.employees_df,
+            sort_order,
+            top_n
+        )
         st.pyplot(fig2)
 
     def render_csv_visualizations(self):

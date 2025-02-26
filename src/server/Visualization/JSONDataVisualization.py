@@ -22,9 +22,7 @@ class JSONDataVisualization(Visualization):
         self.employees_df = pd.DataFrame(employees_data)
 
     def plot(self):
-        fig1 = self.plot_salary_distribution_by_company(self.companies_df, self.employees_df, company_filter='RecreaLife')
-        fig2 = self.plot_roles_by_average_salary(self.employees_df, top_n=30)
-        return fig1, fig2
+        pass
     
     def plot_salary_distribution_by_company(self, companies_df, employees_df, company_filter=None):
         filtered_employees = employees_df.copy()
