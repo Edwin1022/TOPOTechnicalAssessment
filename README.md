@@ -12,6 +12,8 @@ This project is a data processing and visualization pipeline designed to handle 
 ## Setup Instructions
 
 ### Prerequisites
+- Git
+- Visual Studio Code
 - Python 3.8 or higher
 - `pip` (Python package installer)
 
@@ -22,6 +24,21 @@ This project is a data processing and visualization pipeline designed to handle 
    git clone https://github.com/Edwin1022/TOPOTechnicalAssessment.git
    cd TOPOTechnicalAssessment
    code .
+
+2. **Create and activate a virtual environment**:
+   - Before installing dependencies, set up a virtual environment to isolate the project’s packages.
+   - Run these commands in your terminal (from the TOPOTechnicalAssessment directory):
+      - On Windows (using Git Bash or Command Prompt):
+        ```bash
+         python -m venv venv
+         source venv/Scripts/activate  # For Git Bash
+         # OR
+         venv\Scripts\activate  # For Command Prompt
+        ```
+      - On macOS/Linux:
+        ```bash
+         python3 -m venv venv
+         source venv/bin/activate
    
 3. **Install dependencies**:
    ```bash
@@ -68,7 +85,6 @@ This project is a data processing and visualization pipeline designed to handle 
 ## Assumptions or Challenges
 
 ### Assumptions
-- Git and Visual Studio Code are used and installed. 
 - The datasets are located in the datasets/ directory relative to the project root.
 - The data formats are consistent and follow the expected structure (e.g., JSON with nested company/employee data, CSV with specific columns).
 
