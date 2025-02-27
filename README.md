@@ -19,7 +19,7 @@ This project is a data processing and visualization pipeline designed to handle 
 1. **Clone the repository**:
    Open your terminal (Git Bash is recommended)
    ```bash
-   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/Edwin1022/TOPOTechnicalAssessment.git)
+   git clone https://github.com/Edwin1022/TOPOTechnicalAssessment.git
    cd TOPOTechnicalAssessment
    code .
    
