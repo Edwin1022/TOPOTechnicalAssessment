@@ -17,11 +17,13 @@ This project is a data processing and visualization pipeline designed to handle 
 
 ### Installation
 1. **Clone the repository**:
+   Open your terminal (Git Bash is recommended)
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone [https://github.com/your-username/your-repo-name.git](https://github.com/Edwin1022/TOPOTechnicalAssessment.git)
+   cd TOPOTechnicalAssessment
+   code .
    
-2. **Install dependencies**:
+3. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
@@ -43,7 +45,7 @@ This project is a data processing and visualization pipeline designed to handle 
    python src/server/DataProcessing.py
    ```
    This processes the data and runs the Flask server.
-   The API will be available at http://127.0.0.1:5000/api/data. You are recommended to use Postman to test out the API.
+   The API will be available at http://127.0.0.1:5000/api/data. (You are recommended to use Postman to test out the API.)
 
 2. **Access the Streamlit dashboard**:
    ```bash
@@ -66,9 +68,9 @@ This project is a data processing and visualization pipeline designed to handle 
 ## Assumptions or Challenges
 
 ### Assumptions
+- Git and Visual Studio Code are used and installed. 
 - The datasets are located in the datasets/ directory relative to the project root.
 - The data formats are consistent and follow the expected structure (e.g., JSON with nested company/employee data, CSV with specific columns).
-- Required libraries for handling different data formats (e.g., tabula-py for PDFs, python-pptx for PPTX files) are installed.
 
 ## Challenges:
 Challenges
