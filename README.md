@@ -28,17 +28,10 @@ This project is a data processing and visualization pipeline designed to handle 
 2. **Create and activate a virtual environment**:
    - Before installing dependencies, set up a virtual environment to isolate the project’s packages.
    - Run these commands in your terminal (from the TOPOTechnicalAssessment directory):
-      - On Windows (using Git Bash or Command Prompt):
-        ```bash
-         python -m venv venv
-         source venv/Scripts/activate  # For Git Bash
-         # OR
-         venv\Scripts\activate  # For Command Prompt
-        ```
-      - On macOS/Linux:
-        ```bash
-         python3 -m venv venv
-         source venv/bin/activate
+     ```bash
+     python -m venv venv
+     venv\Scripts\activate
+     ```
    
 3. **Install dependencies**:
    ```bash
