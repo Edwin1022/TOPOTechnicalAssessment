@@ -30,7 +30,7 @@ This project is a data processing and visualization pipeline designed to handle 
    - Run these commands in your terminal (from the TOPOTechnicalAssessment directory):
      ```bash
      python -m venv venv
-     venv\Scripts\activate
+     venv/Scripts/activate
      ```
    
 3. **Install dependencies**:
